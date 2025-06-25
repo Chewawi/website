@@ -1,0 +1,73 @@
+{{ define "section" }}
+<section class="content-section">
+    <h2 class="section-title">my work</h2>
+    <ul class="repo-list">
+        <li>
+            <a href="https://github.com/kodekostudios/kodkord" target="_blank" class="repo-link">
+                KodekoStudios/kodkord
+            </a>
+            <p class="repo-desc">
+                Kodkord is a robust and lightweight, low dependency and high performance library for interacting with
+                the Discord API.
+            </p>
+        </li>
+        <li>
+            <a href="https://github.com/chewawi/botfm" target="_blank" class="repo-link">
+                chewawi/botfm
+            </a>
+            <p class="repo-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu gravida aliquet.
+            </p>
+        </li>
+        <li>
+            <a href="https://github.com/chewawi/microsoft-translate-api" target="_blank" class="repo-link">
+                chewawi/microsoft-translate-api
+            </a>
+            <p class="repo-desc">
+                A simple, powerful and free API for Microsoft Translator for Node.js.
+            </p>
+        </li>
+    </ul>
+
+    <h2 class="section-title">my blog</h2>
+    <ul class="blog-list">
+        soon..
+    </ul>
+</section>
+
+<style>
+    .content-section {
+        padding: 2rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #555;
+        padding-bottom: 0.3rem;
+    }
+
+    .repo-list, .blog-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .repo-list li, .blog-list li {
+        margin-bottom: 1rem;
+    }
+
+    .repo-desc {
+        margin: 0.2rem 0 0;
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.4em;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: calc(1.4em * 2);
+    }
+</style>
+{{ end }}

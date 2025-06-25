@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+* {
+    font-family: "JetBrains Mono", monospace;
+}
+
+::selection {
+    background-color: #6c3baa;
+    color: #111111;
+}
+
+::-moz-selection {
+    background-color: #6c3baa;
+    color: #000000;
+}
+
+a {
+    color: #6c3baa;
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: #8b5cd6;
+    cursor: ne-resize;
+    transition: opacity .4s cubic-bezier(.075, .82, .165, 1);
+}
+
