@@ -1,0 +1,147 @@
+{{ define "section" }}
+<section class="content-section">
+    <h2 class="section-title">
+        my work.
+        <small>or... maybe some of it</small>
+    </h2>
+    <ul class="repo-list">
+        <li>
+            <a
+                    href="https://github.com/kodekostudios/kodkord"
+                    target="_blank"
+                    class="repo-link"
+            >
+                KodekoStudios/kodkord
+            </a>
+            <p class="repo-desc">
+                Kodkord is a robust and lightweight, low dependency and high
+                performance library for interacting with the Discord API.
+            </p>
+        </li>
+        <li>
+            <a
+                    href="https://github.com/chewawi/botfm"
+                    target="_blank"
+                    class="repo-link"
+            >
+                chewawi/botfm
+            </a>
+            <p class="repo-desc">
+                A Discord bot written in Rust that fetches and displays music
+                statistics from Last.fm. Easily get your listening stats and
+                share them with friends directly on your server.
+            </p>
+        </li>
+        <li>
+            <a
+                    href="https://github.com/chewawi/microsoft-translate-api"
+                    target="_blank"
+                    class="repo-link"
+            >
+                chewawi/microsoft-translate-api
+            </a>
+            <p class="repo-desc">
+                A simple, powerful and free API for Microsoft Translator for
+                Node.js.
+            </p>
+        </li>
+    </ul>
+
+    <h2 class="section-title">my blog.</h2>
+    <ul class="blog-list">
+        {{ if .Posts }} {{ range .Posts }}
+        <li class="post-item">
+            <a href="/posts/{{ .Slug }}" class="post-title">{{ .Title }}</a>
+            <div class="post-meta">
+                <span class="post-date"
+                >{{ .Created.Format "January 2, 2006" }}</span
+                >
+            </div>
+        </li>
+        {{ end }} {{ else }}
+        <p>No posts yet.</p>
+        {{ end }}
+    </ul>
+    <div class="view-all">
+        <a href="/posts" class="view-all-link">View all posts →</a>
+    </div>
+</section>
+
+<style>
+    .content-section {
+        padding: 0.7rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #555;
+        padding-bottom: 0.3rem;
+    }
+
+    .repo-list,
+    .blog-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .repo-list li,
+    .blog-list li {
+        margin-bottom: 1rem;
+    }
+
+    .post-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .post-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    .post-title:hover {
+        text-decoration: underline;
+    }
+
+    .post-meta {
+        font-size: 0.85rem;
+        color: #999;
+    }
+
+    .view-all {
+        margin-top: 1.5rem;
+    }
+
+    .view-all-link {
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .view-all-link:hover {
+        text-decoration: underline;
+    }
+
+    .repo-desc {
+        margin: 0.2rem 0 0;
+        color: #ccc;
+        font-size: 0.95rem;
+        line-height: 1.4em;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: calc(1.4em * 2);
+    }
+
+    small {
+        font-size: 0.5em;
+        color: #6666;
+    }
+</style>
+{{ end }}

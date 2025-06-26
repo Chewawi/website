@@ -1,32 +1,26 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
     <title>Chewawi</title>
-
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
-
-    <meta name="robots" content="noindex"/>
-    <meta name="generator" content="Go"/>
-
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.ico"/>
     <meta name="description" content="how can you see into my eyes, like open doors"/>
-    <meta name="keywords" content="chewawi, web, official"/>
     <meta name="author" content="Chewawi"/>
-    <meta name="thumbnail" content="/static/favicon.ico"/>
-
-    <meta property="og:title" content="Chewawi"/>
-    <meta property="og:description" content="how can you see into my eyes, like open doors"/>
-    <meta property="og:image" content="/static/favicon.ico"/>
 
     <link rel="stylesheet" href="/static/global.css"/>
 </head>
 
 <body>
 <div class="wrapper">
+    {{if ne .Title "Chewawi"}}
+    <div class="breadcrumbs">
+        <a href="/">Home</a> / {{.Title}}
+    </div>
+    {{end}}
     <div class="main">
-        {{ template "hero" . }}
-        {{ template "section" . }}
+        {{if .Content}} {{.Content}} {{else}} {{ template "hero" . }}{{
+        template "section" . }} {{end}}
     </div>
     {{ template "footer" . }}
 </div>
@@ -36,37 +30,37 @@
     html, body {
         background-color: #000000;
         color: #ffffff;
-        height: 100%;
         margin: 0;
         padding: 0;
     }
 
     body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding: 20px;
     }
 
     .wrapper {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
     .main {
-        flex: 1;
-        display: flex;
-        gap: 4rem;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 2rem;
+        margin-bottom: 20px;
     }
 
-    .main > section {
-        flex: 1 1 45%;
+    .breadcrumbs {
+        margin-bottom: 15px;
+        padding: 8px 0;
+        color: #aaa;
+        font-size: 0.9em;
+    }
+
+    .breadcrumbs a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
     }
 </style>
 </html>

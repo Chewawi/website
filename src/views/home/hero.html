@@ -1,0 +1,52 @@
+{{ define "hero" }}
+<section style="padding: 2rem 1rem">
+    <div
+            style="
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        "
+    >
+        <h1 class="chewawi">chewawi.</h1>
+        <p style="font-size: 1.2rem; margin: 0">
+            wannabe full-stack, mostly snack
+        </p>
+        <ul class="links">
+            <li>
+                <a href="https://github.com/chewawi">🐈 github.com/chewawi</a>
+            </li>
+            <li><a href="https://x.com/che_wawi">🐦 che_wawi</a></li>
+            <li><a href="mailto:me@chewawi.gay">💌 me@chewawi.gay</a></li>
+            {{ if .IsAdmin }}
+            <li><a href="/owner">⚙️ admin</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</section>
+
+<style>
+    .chewawi {
+        font-size: 8vw;
+        margin: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .chewawi:hover {
+        text-decoration: underline;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+{{ end }}

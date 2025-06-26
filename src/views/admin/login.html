@@ -1,0 +1,68 @@
+{{ define "login" }}
+<div class="login-container">
+    <h1 class="login-title">Login</h1>
+
+    {{ if .Error }}
+    <div class="error-message">{{ .Error }}</div>
+    {{ end }}
+
+    <form method="POST" action="/login" class="login-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required/>
+        </div>
+
+        <input type="submit" value="Login" class="login-link">
+    </form>
+</div>
+
+<style>
+    .login-container {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .login-title {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #333;
+        color: #fff;
+        background-color: #222;
+    }
+
+    .login-link {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+    .error-message {
+        color: #e74c3c;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+</style>
+{{ end }}

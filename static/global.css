@@ -1,28 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
-* {
+:root {
+    --primary-color: #6b4ad4;
     font-family: "JetBrains Mono", monospace;
 }
 
 ::selection {
-    background-color: #6c3baa;
-    color: #111111;
+    background-color: var(--primary-color);
+    color: #000000;
 }
 
 ::-moz-selection {
-    background-color: #6c3baa;
+    background-color: var(--primary-color);
     color: #000000;
 }
 
 a {
-    color: #6c3baa;
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-    color: #8b5cd6;
+    color: #a93cc7;
     cursor: ne-resize;
-    transition: opacity .4s cubic-bezier(.075, .82, .165, 1);
+    transition: opacity 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
